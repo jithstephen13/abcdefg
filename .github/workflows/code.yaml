@@ -15,21 +15,21 @@ jobs:
    runs-on: ubuntu-latest
 
    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Install Node 16
-      uses: actions/setup-node@v1
-      with:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Install node 16
+        uses: actions/setup-node@v1
+        with:
           node-version: 16.x
-     - name: Install NPM Dependencies
+      - name: Install NPM Dependencies
         run: npm i
-     - name: Build Project
+      - name: Build Project
         run: npm run build
-     - name: Upload artifact in order to deploy
+      - name: Upload artifact in order to deploy
         uses: actions/upload-artifact@v2
         with:
           name: production-files
-          path: ./build   
+          path: ./build
 
 
 
